@@ -48,11 +48,11 @@ describe('Auth Middleware', () => {
 
     }); // it()
 
-    it.skip('logs in an admin user with the right credentials', () => {
+    it('logs in an admin user with the right credentials', () => {
 
       // Change the request to match this test case
       req.headers = {
-        authorization: 'Basic aGVsbG9Xb3JsZA==',
+        authorization: 'Basic YWRtaW4tYmFzaWM6cGFzc3dvcmQ=',
       };
 
       return middleware(req, res, next)
