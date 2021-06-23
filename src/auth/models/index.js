@@ -13,8 +13,7 @@ const DATABASE_CONFIG = process.env.NODE_ENV === 'production' ? {
   },
 } : {};
 
-// const sequelize = new Sequelize(DATABASE_URL, DATABASE_CONFIG);
-const sequelize = new Sequelize('sqlite:memory:', {});
+const sequelize = new Sequelize(DATABASE_URL, DATABASE_CONFIG);
 
 module.exports = {
   db: sequelize,
