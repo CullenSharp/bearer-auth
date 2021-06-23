@@ -10,12 +10,13 @@ const DATABASE_CONFIG = process.env.NODE_ENV === 'production' ? {
   dialectOptions: {
     ssl: true,
     rejectUnauthorized: false,
-  }
-} : {}
+  },
+} : {};
 
-const sequelize = new Sequelize(DATABASE_URL, DATABASE_CONFIG);
+// const sequelize = new Sequelize(DATABASE_URL, DATABASE_CONFIG);
+const sequelize = new Sequelize('sqlite:memory:', {});
 
 module.exports = {
   db: sequelize,
   users: userSchema(sequelize, DataTypes),
-}
+};
